@@ -1,0 +1,501 @@
+<!doctype html>
+
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display"
+  >
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col justify-between"
+      >
+        <div class="flex flex-col gap-6 p-6">
+          <div class="flex items-center gap-3">
+            <div
+              class="bg-primary size-10 rounded-lg flex items-center justify-center text-white"
+            >
+              <span class="material-symbols-outlined text-2xl"
+                >auto_awesome</span
+              >
+            </div>
+            <div class="flex flex-col">
+              <h1 class="text-primary text-lg font-bold leading-tight">
+                AI Studio
+              </h1>
+              <p class="text-slate-500 dark:text-slate-400 text-xs font-normal">
+                Sáng tạo không giới hạn
+              </p>
+            </div>
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">home</span>
+              <span class="text-sm font-medium">Trang chủ</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary"
+              href="#"
+            >
+              <span class="material-symbols-outlined">magic_button</span>
+              <span class="text-sm font-semibold">Tạo ảnh</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">photo_library</span>
+              <span class="text-sm font-medium">Thư viện</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined"
+                >account_balance_wallet</span
+              >
+              <span class="text-sm font-medium">Ví tiền</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              <span class="text-sm font-medium">Cài đặt</span>
+            </a>
+          </nav>
+        </div>
+        <div class="p-6 border-t border-slate-200 dark:border-slate-800">
+          <button
+            class="flex items-center gap-3 px-3 py-2.5 w-full text-slate-600 dark:text-slate-300 hover:text-red-500 transition-colors"
+          >
+            <span class="material-symbols-outlined">logout</span>
+            <span class="text-sm font-medium">Đăng xuất</span>
+          </button>
+        </div>
+      </aside>
+      <!-- Main Content Area -->
+      <main
+        class="flex-1 flex flex-col min-w-0 bg-background-light dark:bg-background-dark overflow-hidden"
+      >
+        <!-- Header -->
+        <header
+          class="h-16 flex-shrink-0 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8"
+        >
+          <div class="flex items-center gap-4">
+            <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100">
+              AI Image Dashboard
+            </h2>
+          </div>
+          <div class="flex items-center gap-6">
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full"
+            >
+              <span class="material-symbols-outlined text-primary text-sm"
+                >bolt</span
+              >
+              <span
+                class="text-sm font-medium text-slate-700 dark:text-slate-300"
+                >Gói Pro: 85/100 lượt</span
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-slate-800 dark:text-slate-100">
+                  Nguyễn Văn A
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Thành viên Bạc
+                </p>
+              </div>
+              <div
+                class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary/10"
+              >
+                <img
+                  alt="User Profile"
+                  class="w-full h-full object-cover"
+                  data-alt="Avatar của người dùng Nguyễn Văn A"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7UJ2HK2GCXBQheR-N5j8DNjsayPSQzU977BJnT1ilegLRSDTyNdiwITLysHLaXr7NHqfYGKmQEVSePBECmVj6OxzEEx-NjxEjcnVIGia_rN7nyZNM0dWXcOmlb8Kh6PlOswf8nbaCrEeYdIg8oRYGyUZIx9_w3NPukXZruKT0IdiX-_bm98AbfI42QQZ0bbuShmrvIU1-wv_pU45B--hkSy0nPbpygi6Ex8lK-wdq1q1UPQRyCuDtcRkD6YOHm3JrIpXdyZhHc6Mo"
+                />
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="flex-1 flex overflow-hidden">
+          <!-- Left Sidebar: Configs -->
+          <div
+            class="w-80 flex-shrink-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 overflow-y-auto no-scrollbar p-6"
+          >
+            <div class="space-y-8">
+              <!-- Wallet Section -->
+              <!-- Parameters Form -->
+              <div class="space-y-6">
+                <h3
+                  class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-lg">tune</span>
+                  Cấu hình tham số
+                </h3>
+                <div class="space-y-4">
+                  <!-- Model Selection -->
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase"
+                      >AI Provider / Model</label
+                    >
+                    <select
+                      class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary focus:border-primary"
+                    >
+                      <option>Stable Diffusion XL v1.0</option>
+                      <option>Midjourney v6 API</option>
+                      <option>DALL-E 3</option>
+                      <option>Flux.1 Dev</option>
+                    </select>
+                  </div>
+                  <!-- Dimension Selection -->
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase"
+                      >Tải ảnh lên (Image to Image)</label
+                    >
+                    <div
+                      class="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-lg p-4 flex flex-col items-center justify-center gap-2 hover:border-primary transition-colors cursor-pointer group"
+                    >
+                      <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary"
+                        >cloud_upload</span
+                      >
+                      <p class="text-[10px] text-slate-500 text-center">
+                        Click hoặc kéo thả ảnh vào đây để sửa bằng AI
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase"
+                      >Tỉ lệ khung hình</label
+                    >
+                    <div class="grid grid-cols-3 gap-2">
+                      <button
+                        class="p-2 border-2 border-primary bg-primary/5 text-primary rounded-lg text-xs font-bold flex flex-col items-center gap-1"
+                      >
+                        <div class="w-4 h-4 border-2 border-primary"></div>
+                        1:1
+                      </button>
+                      <button
+                        class="p-2 border border-slate-200 dark:border-slate-700 hover:border-primary rounded-lg text-xs font-medium flex flex-col items-center gap-1 transition-colors"
+                      >
+                        <div class="w-3 h-4 border-2 border-slate-400"></div>
+                        3:4
+                      </button>
+                      <button
+                        class="p-2 border border-slate-200 dark:border-slate-700 hover:border-primary rounded-lg text-xs font-medium flex flex-col items-center gap-1 transition-colors"
+                      >
+                        <div class="w-4 h-3 border-2 border-slate-400"></div>
+                        16:9
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Negative Prompt -->
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase"
+                      >Prompt tiêu cực (Negative)</label
+                    >
+                    <textarea
+                      class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary focus:border-primary placeholder:text-slate-400"
+                      placeholder="Những thứ bạn không muốn xuất hiện (blur, bad anatomy, low quality...)"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <!-- Other Settings -->
+                  <div
+                    class="pt-4 border-t border-slate-100 dark:border-slate-800"
+                  >
+                    <div class="flex justify-between items-center mb-4">
+                      <span
+                        class="text-sm font-medium text-slate-700 dark:text-slate-300"
+                        >Độ ưu tiên (Priority)</span
+                      >
+                      <div
+                        class="w-10 h-5 bg-slate-200 dark:bg-slate-700 rounded-full relative cursor-pointer"
+                      >
+                        <div
+                          class="absolute left-1 top-1 size-3 bg-white rounded-full transition-all translate-x-5 !bg-primary"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Center Content: Prompt and Results -->
+          <div class="flex-1 overflow-y-auto no-scrollbar p-8">
+            <!-- Prompt Input Area -->
+            <div class="max-w-4xl mx-auto mb-12">
+              <div
+                class="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 focus-within:ring-2 focus-within:ring-primary/20 transition-all"
+              >
+                <textarea
+                  class="w-full border-none bg-transparent focus:ring-0 text-lg placeholder:text-slate-400 dark:text-slate-100 p-4 resize-none"
+                  placeholder="Mô tả ý tưởng của bạn tại đây..."
+                  rows="3"
+                ></textarea>
+                <div
+                  class="flex justify-between items-center p-2 border-t border-slate-100 dark:border-slate-800"
+                >
+                  <div class="flex gap-2">
+                    <button
+                      class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 transition-colors"
+                    >
+                      <span class="material-symbols-outlined">image</span>
+                    </button>
+                    <button
+                      class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 transition-colors"
+                    >
+                      <span class="material-symbols-outlined"
+                        >auto_fix_high</span
+                      >
+                    </button>
+                  </div>
+                  <button
+                    class="bg-primary hover:bg-blue-600 text-white px-8 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-primary/20"
+                  >
+                    <span>Tạo ảnh</span>
+                    <span class="material-symbols-outlined text-sm">bolt</span>
+                  </button>
+                </div>
+              </div>
+              <p class="text-center text-xs text-slate-400 mt-4">
+                Sử dụng tiếng Anh để có kết quả chính xác nhất. Mỗi lượt tạo
+                tiêu tốn 1 lượt dùng.
+              </p>
+            </div>
+            <!-- Results Section -->
+            <div class="max-w-6xl mx-auto">
+              <div class="flex items-center justify-between mb-6">
+                <h3
+                  class="text-lg font-bold text-slate-800 dark:text-slate-100"
+                >
+                  Kết quả gần đây
+                </h3>
+                <div class="flex gap-2">
+                  <button
+                    class="text-xs font-semibold px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg"
+                  >
+                    Mới nhất
+                  </button>
+                  <button
+                    class="text-xs font-semibold px-3 py-1.5 text-slate-500"
+                  >
+                    Yêu thích
+                  </button>
+                </div>
+              </div>
+              <!-- Image Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Generation Job: Processing -->
+                <div
+                  class="aspect-square bg-slate-200 dark:bg-slate-800 rounded-xl relative overflow-hidden group border border-dashed border-slate-300 dark:border-slate-700"
+                >
+                  <div
+                    class="absolute inset-0 flex flex-col items-center justify-center gap-3"
+                  >
+                    <div
+                      class="size-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"
+                    ></div>
+                    <div class="text-center">
+                      <p
+                        class="text-sm font-bold text-slate-700 dark:text-slate-300"
+                      >
+                        Đang khởi tạo...
+                      </p>
+                      <p class="text-xs text-slate-500">Tiến trình: 45%</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Media Asset: Completed -->
+                <div
+                  class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl relative overflow-hidden group border border-slate-200 dark:border-slate-700"
+                >
+                  <img
+                    alt="Generated Art"
+                    class="w-full h-full object-cover"
+                    data-alt="Nghệ thuật trừu tượng 3D với màu xanh dương và trắng"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXE3TJSd6ebj3PTrE1g3E7viYLomsR7vBXUHr55yvwU4xvTwO9QZnVxYTo5nOa5P9XANlU08bpkIDQFeFEC9418jQ7HIUN3OIh5BuWN5oFhRZfhrA3SyvPaBbMbeXUZl2fFweZEkh3F8fjysoamahxA2eY7XEeMCu4kyVcgjzOGBj9ON9CdCiypP1Kg15_U8g7dwfb2Sc1Ooh8p0DpPML6kbYFdPllmWD9hdeB8fd0iqQBsr-EKmDbMCidVNpRkURy7emxybVOZL4j"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4"
+                  >
+                    <div class="flex justify-between items-center">
+                      <div class="flex gap-2">
+                        <button
+                          class="size-8 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center text-white"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >download</span
+                          >
+                        </button>
+                        <button
+                          class="size-8 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center text-white"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >favorite</span
+                          >
+                        </button>
+                      </div>
+                      <button
+                        class="text-[10px] bg-primary text-white px-2 py-1 rounded font-bold"
+                      >
+                        SDXL 1.0
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Media Asset: Completed -->
+                <div
+                  class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl relative overflow-hidden group border border-slate-200 dark:border-slate-700"
+                >
+                  <img
+                    alt="Generated Art"
+                    class="w-full h-full object-cover"
+                    data-alt="Phong cảnh thành phố tương lai đầy ánh đèn neon"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPU_5jxiAqe_MpOC_vopARmq7SrgbcwDjgEhS-x86nxtmMUJradb2Cz4gfAKQ8tDVReKnnYj2OSsnphIdrsFxc607UGkyRHaCV_k7scpRspjl1eLzXEO1EgUdhG-3WzKz_RaKL_GeIDoxj2NH27TdLqNquxSL4EZVt1-E6gAwJ5aClWYNCiIqHnwmUU958a_gvCJLmwIERilit88DcfAJzZY9tJ-w3KtINutKxi9BZwy2TEICvcDFgiVsbugtyVUIJQQoszwMJI0ns"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4"
+                  >
+                    <div class="flex justify-between items-center">
+                      <div class="flex gap-2">
+                        <button
+                          class="size-8 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center text-white"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >download</span
+                          >
+                        </button>
+                        <button
+                          class="size-8 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center text-white"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >favorite</span
+                          >
+                        </button>
+                      </div>
+                      <button
+                        class="text-[10px] bg-primary text-white px-2 py-1 rounded font-bold"
+                      >
+                        Flux.1
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Media Asset: Completed -->
+                <div
+                  class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl relative overflow-hidden group border border-slate-200 dark:border-slate-700"
+                >
+                  <img
+                    alt="Generated Art"
+                    class="w-full h-full object-cover"
+                    data-alt="Hình ảnh chân dung phong cách cyberpunk"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr32EHoWMc4stYK3o3nDCtp9fgMb24XaN3IUliupPYQDzigHD0odw06k4MLqqI2XdugHURVZ4UiTXY3T2j3vCEnRE7bg6x9wUhhHvKKQEJNOD6uugdKYA67b9IHmYaw81SzszSqLVVDudG1qSJCxCafJJGMOGqwOUGI3fLYiW1WRwco2BYzJ8iVN6Nw_2JRKrz_UFhUhxC4jkW7imFypc55DbLD5nQHPJdCjFt51A1NAv3vLkLZ9Wn5IZ8V5dReburdZ414uFS8YfK"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4"
+                  >
+                    <div class="flex justify-between items-center">
+                      <div class="flex gap-2">
+                        <button
+                          class="size-8 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center text-white"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >download</span
+                          >
+                        </button>
+                        <button
+                          class="size-8 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center text-white"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >favorite</span
+                          >
+                        </button>
+                      </div>
+                      <button
+                        class="text-[10px] bg-primary text-white px-2 py-1 rounded font-bold"
+                      >
+                        Midjourney
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Empty Slot -->
+                <div
+                  class="aspect-square border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl flex items-center justify-center text-slate-300 dark:text-slate-700"
+                >
+                  <span class="material-symbols-outlined text-4xl"
+                    >add_circle</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

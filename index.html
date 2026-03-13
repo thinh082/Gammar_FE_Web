@@ -1,0 +1,599 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI Create - Sáng tạo ảnh nghệ thuật đỉnh cao với AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100"
+  >
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center gap-2">
+            <div class="text-primary">
+              <span class="material-symbols-outlined text-4xl"
+                >auto_awesome</span
+              >
+            </div>
+            <span
+              class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+              >AI Create</span
+            >
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#features"
+              >Tính năng</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#templates"
+              >Templates</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#pricing"
+              >Bảng giá</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Liên hệ</a
+            >
+          </nav>
+          <div class="flex items-center gap-3">
+            <button
+              class="hidden sm:block px-4 py-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-primary transition-colors"
+            >
+              Đăng nhập
+            </button>
+            <button
+              class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-lg shadow-primary/20"
+            >
+              Đăng ký
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold"
+            >
+              <span class="material-symbols-outlined text-sm">bolt</span>
+              AI Thế hệ mới 2.0 đã sẵn sàng
+            </div>
+            <h1
+              class="text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white"
+            >
+              Biến ý tưởng thành
+              <span class="text-primary">tác phẩm</span> trong vài giây
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg">
+              Sử dụng sức mạnh của trí tuệ nhân tạo để tạo ra hình ảnh chất
+              lượng cao, chuyên nghiệp từ văn bản. Đơn giản, nhanh chóng và
+              không giới hạn sáng tạo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="px-8 py-4 bg-primary text-white font-bold rounded-xl text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/30"
+              >
+                Bắt đầu ngay miễn phí
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <button
+                class="px-8 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-bold rounded-xl text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center justify-center gap-2"
+              >
+                <span class="material-symbols-outlined">play_circle</span>
+                Xem Demo
+              </button>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-slate-500">
+              <div class="flex -space-x-2">
+                <img
+                  alt="User"
+                  class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900"
+                  data-alt="User avatar 1"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqnOdMH6LyZUquCQrOzO4Sok6Bswiu523lk0tWdLngjpYldqWWMU4_vrSWGOTZie_YNTRS7FOWTFZ-V-pS5y2EajbCmie822Q5DEqte2PzrfxoZitACtGz6MyzvseEnHglgyetfz1kBRUmLVmF66zA70SJz9ZMKnqZe8tr08GmyzmBM6rUz9xt-y2mdQT1ZyEbbT4mofcgcbRmz_R0nIkJS1yvI1Y99RG_-W-FgCaZxXCoSWrcbXuXVH-L-Nk0UJZo3U7Ovvy-33Qi"
+                />
+                <img
+                  alt="User"
+                  class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900"
+                  data-alt="User avatar 2"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Ws8H0DttL9kzKIIk0qki6pcij-ePTDygcvPP859rSNxhDMY4GOOB2iTdspYC0l7rYp_txfrvAMa3nVFO82AqzHaDUqcGzCdEe-2_pZ0maRe8EW5Sl2nJbKM4B9tQWRp2QqkI3ltK90fWDNBH5zRennWIQ00znq0QBg09frEdyHjVxFWIK5nl3N5DMmNr-HpJPvPeKS18ezZrNfj9XnAFkhicvzYw_HVStnTWCeki8l7aH-ZhwaKDhMLpIt4iYI5JmPxnVjzIFRMx"
+                />
+                <img
+                  alt="User"
+                  class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900"
+                  data-alt="User avatar 3"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9z5x78BLKYl1mtLJhk0pbU3yrAZ5Dk_8X8aXvDiLx3dpgpOggEDD8E2FFjWCijLrmAQHRyDOVG3f-Pvz1bF2Bgl9ObK_biW3LlJUSJ1xWsMM6MYr8Zujum3u5T_14DwKAv8qXxp7SgkzFJ6P0H-QwuqRkobNDdXhFiew476TchawzMY0BYn7w8lcZFSUdtOdmJVKTSTR7zHICL4u0u7LAnODH0lqsyzoPdaJgzudpogW3VbUi616OvoHXT6dAhcS2llwDKo6HSs3I"
+                />
+              </div>
+              <span>Hơn 10,000+ nhà sáng tạo tin dùng</span>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl"
+            ></div>
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20"
+            >
+              <img
+                alt="AI Art Showcase"
+                class="w-full aspect-square object-cover"
+                data-alt="Nghệ thuật AI trừu tượng đẹp mắt"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCATTIai2_wK9fY5vBmS9lIJk0HCo4rOiYcRun78RHlhKPBQHis217yDJd_cAb0SEh5JOXvV8yT8ynH8Qqv92b4UhvgFut44waSGKheGctB2UJSKeiAM-BGHTSpfPVXfyi_EyBYb_m3icGf7sAg0c2ma7-cTZpZwz2NNYaNtmOR6yiAcUrArYjA8Ur9faEjFunRZcr1t-8ym_riHIChfWj17q8qydnsnf7irjA7unUQa7K7FYvBEqTz8GMfUBWtqz2FpJC4opgVCgPA"
+              />
+              <div
+                class="absolute bottom-4 left-4 right-4 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 text-white"
+              >
+                <p
+                  class="text-xs uppercase tracking-widest font-semibold opacity-70 mb-1"
+                >
+                  Prompt ví dụ
+                </p>
+                <p class="text-sm italic">
+                  "Một thành phố tương lai rực rỡ dưới ánh đèn neon, phong cách
+                  nghệ thuật kỹ thuật số 8k..."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-24 bg-white dark:bg-slate-900/50" id="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          class="text-primary font-bold text-sm tracking-widest uppercase mb-4"
+        >
+          Tính năng đột phá
+        </h2>
+        <h3 class="text-3xl md:text-4xl font-bold mb-16">
+          Công nghệ AI tiên tiến nhất hiện nay
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+          <!-- Feature 1: Templates -->
+          <div
+            class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors"
+          >
+            <div
+              class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6"
+            >
+              <span class="material-symbols-outlined">dashboard_customize</span>
+            </div>
+            <h4 class="text-xl font-bold mb-3">Kho Templates khổng lồ</h4>
+            <p class="text-slate-600 dark:text-slate-400">
+              Hệ thống <strong>Table Templates</strong> với hàng ngàn mẫu có sẵn
+              giúp bạn bắt đầu sáng tạo mà không cần lo về ý tưởng ban đầu.
+            </p>
+          </div>
+          <!-- Feature 2: Performance -->
+          <div
+            class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors"
+          >
+            <div
+              class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6"
+            >
+              <span class="material-symbols-outlined">speed</span>
+            </div>
+            <h4 class="text-xl font-bold mb-3">Xử lý siêu tốc</h4>
+            <p class="text-slate-600 dark:text-slate-400">
+              Tối ưu hóa quy trình thông qua <strong>Generation_jobs</strong>,
+              trả kết quả chất lượng cao chỉ trong chưa đầy 5 giây.
+            </p>
+          </div>
+          <!-- Feature 3: Asset Management -->
+          <div
+            class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors"
+          >
+            <div
+              class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6"
+            >
+              <span class="material-symbols-outlined">folder_managed</span>
+            </div>
+            <h4 class="text-xl font-bold mb-3">Quản lý tài sản số</h4>
+            <p class="text-slate-600 dark:text-slate-400">
+              Lưu trữ và phân loại sản phẩm chuyên nghiệp với
+              <strong>Media_assets</strong>. Dễ dàng truy xuất và tái sử dụng
+              mọi lúc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Showcase Section -->
+    <section class="py-24" id="templates">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        >
+          <div>
+            <h3 class="text-3xl font-bold mb-4">Khám phá Templates</h3>
+            <p class="text-slate-600 dark:text-slate-400">
+              Lựa chọn phong cách phù hợp nhất với dự án của bạn.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="px-4 py-2 rounded-full bg-primary text-white text-sm font-medium"
+            >
+              Tất cả
+            </button>
+            <button
+              class="px-4 py-2 rounded-full bg-slate-200 dark:bg-slate-800 text-sm font-medium hover:bg-slate-300 transition-colors"
+            >
+              Chân dung
+            </button>
+            <button
+              class="px-4 py-2 rounded-full bg-slate-200 dark:bg-slate-800 text-sm font-medium hover:bg-slate-300 transition-colors"
+            >
+              Phong cảnh
+            </button>
+            <button
+              class="px-4 py-2 rounded-full bg-slate-200 dark:bg-slate-800 text-sm font-medium hover:bg-slate-300 transition-colors"
+            >
+              Nghệ thuật
+            </button>
+            <button
+              class="px-4 py-2 rounded-full bg-slate-200 dark:bg-slate-800 text-sm font-medium hover:bg-slate-300 transition-colors"
+            >
+              Kiến trúc
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="group relative aspect-[3/4] overflow-hidden rounded-xl">
+            <img
+              alt="Portrait AI"
+              class="w-full h-full object-cover transition-transform group-hover:scale-110"
+              data-alt="Mẫu ảnh chân dung AI chuyên nghiệp"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkfzqlIOY2JriMchEIXY-v12ogRX-dum3GBmlKVVdsX_vxnk1alNrejubcQorDD8GZfsrWAilFqQ2rMC7ipuJgUR7e8c7WEWBF9nmrle7wCF5cVTLBx-5lv0dzyJwn7nj1w7TUvO6e1nS3zaJQ5Bo322Ts1uC3elAA9rrbWJepuzVq5looJqsgEQJ3M80Kw64ZeSUdm0P2Fl6l4RA7G1iUhZaefb5t0AuBpgCpos4KTmUHVpuQrrHWnz2SYwOxL-4vvcKSIt7bx429"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span class="text-white text-sm font-bold">Portrait Master</span>
+            </div>
+          </div>
+          <div class="group relative aspect-[3/4] overflow-hidden rounded-xl">
+            <img
+              alt="Landscape AI"
+              class="w-full h-full object-cover transition-transform group-hover:scale-110"
+              data-alt="Mẫu ảnh phong cảnh thiên nhiên AI"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlqAvJxA9EZk-MASiRybrBO0p8AMjkkmMWtAgqgxEyTwWzDlhahD5w5-Ubq6ykmHHfSliow5yWEeyRVYMHlNyUVmbCPl5qvB4D1JFaMtRGwKr9ShKCVeoWBj-QaPEr_pz9KTjPqkGhQyYpKJhNQc3Smq2S-WsoYoJ6iVVSc1PFOmQUS7MRonlhruAhVBIs0NK7pk6DuI97v7c8kosLXHJrJctK3wFnriCX47FNuwCLpk1VDXMDaXNsIk9CqEIVGq0LK7hc6sW2X2rV"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span class="text-white text-sm font-bold">Nature Dream</span>
+            </div>
+          </div>
+          <div class="group relative aspect-[3/4] overflow-hidden rounded-xl">
+            <img
+              alt="Art AI"
+              class="w-full h-full object-cover transition-transform group-hover:scale-110"
+              data-alt="Mẫu ảnh nghệ thuật trừu tượng AI"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWY4nKJr-aOKFib3VsDc0LBfjMzhYdrRpyelKvy9SZQJD2PBGIzUgIp6UbkkaR7GvXsne0Ucpdj9zU5OIvo5mjcQoL7OHD2pAvIFpTmJHPpidYPnvbXmJE7E0ILZNR8vufiJlU-j8I2gJ9GlIN1bxCkVKGRGTQlzoBfsoJmKu4Wc8JJzPMX3xZWAtReZmenr-5TiiLfphw3MAI3sotJ61pD4T0rdscg74ZVTa8GuWQTgGg5R9mp7t7B2WhbqDQsZtbMO5FRhdanCUO"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span class="text-white text-sm font-bold">Abstract Flow</span>
+            </div>
+          </div>
+          <div class="group relative aspect-[3/4] overflow-hidden rounded-xl">
+            <img
+              alt="Architecture AI"
+              class="w-full h-full object-cover transition-transform group-hover:scale-110"
+              data-alt="Mẫu ảnh kiến trúc hiện đại AI"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQxsQ3ZfDFpwgjabNE6jd_-1SfwoEmPsbbN05yDYcMqKJ67LC3YTTQHXVqz1zIKykeHG5ZYJZWWUOWfKo6whW-3AJhhCNTjklCK-zHyqbewVlL_N1HKUzRkPTgf2gWrnY5wxMGOMvm-PY6w3kYwVLBhF6Ig0WBf8pagrWSIhxN0eUWMW2PXZAAa6bylmpmZOh9IOA5gAg2E60DETTKmCrr9vtJSGtiaERXFCVx9vnN-egoqKA45PxNkVIXUsJ3KUnY7LLuos-ryUwK"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span class="text-white text-sm font-bold">Modern Structure</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <button
+            class="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+          >
+            Xem tất cả 500+ templates
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Section -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-900" id="pricing">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h3 class="text-3xl font-bold mb-4">Bảng giá minh bạch</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Phù hợp cho cả cá nhân và doanh nghiệp lớn.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Free Plan -->
+          <div
+            class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col h-full shadow-sm"
+          >
+            <div class="mb-8">
+              <h4 class="text-lg font-bold text-slate-500 mb-2">
+                Cá nhân (Free)
+              </h4>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-black">0đ</span>
+                <span class="text-slate-500">/tháng</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                10 credit /tuần
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Templates cơ bản
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-slate-300 text-sm"
+                  >cancel</span
+                >
+                <span class="text-slate-400">Tốc độ chậm</span>
+              </li>
+            </ul>
+            <button
+              class="w-full py-3 border border-slate-200 dark:border-slate-700 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            >
+              Bắt đầu ngay
+            </button>
+          </div>
+          <!-- Pro Plan -->
+          <div
+            class="bg-white dark:bg-background-dark p-8 rounded-2xl border-2 border-primary flex flex-col h-full shadow-xl relative scale-105"
+          >
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase"
+            >
+              Phổ biến nhất
+            </div>
+            <div class="mb-8">
+              <h4 class="text-lg font-bold text-primary mb-2">Chuyên nghiệp</h4>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-black">199.000đ</span>
+                <span class="text-slate-500">/tháng</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                200 lượt tạo/tháng (User_usage)
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Truy cập toàn bộ Templates VIP
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Chất lượng cao &amp; Ultra HD
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Ưu tiên xử lý Generation_jobs
+              </li>
+            </ul>
+            <button
+              class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-primary/20"
+            >
+              Nâng cấp ngay
+            </button>
+          </div>
+          <!-- Business Plan -->
+          <div
+            class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col h-full shadow-sm"
+          >
+            <div class="mb-8">
+              <h4 class="text-lg font-bold text-slate-500 mb-2">
+                Doanh nghiệp
+              </h4>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-black">Liên hệ</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Không giới hạn lượt tạo
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Quản lý ví (Wallet) tập trung
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Hỗ trợ API tích hợp
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                Quản lý media_assets đa người dùng
+              </li>
+            </ul>
+            <button
+              class="w-full py-3 border border-slate-200 dark:border-slate-700 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            >
+              Liên hệ Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-16"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div class="col-span-2">
+            <div class="flex items-center gap-2 mb-6">
+              <div class="text-primary">
+                <span class="material-symbols-outlined text-3xl"
+                  >auto_awesome</span
+                >
+              </div>
+              <span class="text-xl font-bold tracking-tight">AI Create</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-6 max-w-xs">
+              Nền tảng sáng tạo nội dung hình ảnh hàng đầu Việt Nam, hỗ trợ đắc
+              lực bởi trí tuệ nhân tạo.
+            </p>
+            <div class="flex gap-4">
+              <a
+                class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-lg">public</span>
+              </a>
+              <a
+                class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-lg">share</span>
+              </a>
+              <a
+                class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-lg">mail</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Sản phẩm</h5>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li><a class="hover:text-primary" href="#">Tính năng</a></li>
+              <li><a class="hover:text-primary" href="#">Templates</a></li>
+              <li><a class="hover:text-primary" href="#">Bảng giá</a></li>
+              <li><a class="hover:text-primary" href="#">Showcase</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Hỗ trợ</h5>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li><a class="hover:text-primary" href="#">Tài liệu API</a></li>
+              <li><a class="hover:text-primary" href="#">Hướng dẫn</a></li>
+              <li>
+                <a class="hover:text-primary" href="#">Trung tâm trợ giúp</a>
+              </li>
+              <li>
+                <a class="hover:text-primary" href="#">Trạng thái hệ thống</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Pháp lý</h5>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li><a class="hover:text-primary" href="#">Điều khoản</a></li>
+              <li><a class="hover:text-primary" href="#">Bảo mật</a></li>
+              <li><a class="hover:text-primary" href="#">Bản quyền</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Công ty</h5>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li><a class="hover:text-primary" href="#">Về chúng tôi</a></li>
+              <li><a class="hover:text-primary" href="#">Blog</a></li>
+              <li><a class="hover:text-primary" href="#">Tuyển dụng</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-xs text-slate-500">
+            © 2024 AI Create. Tất cả quyền được bảo lưu.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-slate-400 text-sm"
+              >language</span
+            >
+            <span class="text-xs text-slate-500 font-medium"
+              >Tiếng Việt (VN)</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
