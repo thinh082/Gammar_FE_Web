@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Quên mật khẩu | Gammar AI</title>
+    <title>Gammar - Đăng ký</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap"
@@ -73,9 +73,9 @@
               error: "#ba1a1a",
             },
             fontFamily: {
-              headline: ["Manrope", "sans-serif"],
-              body: ["Be Vietnam Pro", "sans-serif"],
-              label: ["Be Vietnam Pro", "sans-serif"],
+              headline: ["Manrope"],
+              body: ["Be Vietnam Pro"],
+              label: ["Be Vietnam Pro"],
             },
             borderRadius: {
               DEFAULT: "1rem",
@@ -92,11 +92,8 @@
         font-family: "Be Vietnam Pro", sans-serif;
         background-color: #f7f9fc;
       }
-      .headline-font {
-        font-family: "Manrope", sans-serif;
-      }
-      .glass-effect {
-        background: rgba(255, 255, 255, 0.05);
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
       }
@@ -104,166 +101,254 @@
         background: linear-gradient(135deg, #003ec7 0%, #0052ff 100%);
       }
       .ambient-shadow {
-        box-shadow: 0 40px 60px rgba(0, 62, 199, 0.06);
+        box-shadow: 0 40px 60px -15px rgba(0, 62, 199, 0.06);
       }
-      .ghost-border {
-        border: 1px solid rgba(195, 197, 217, 0.2);
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
       }
     </style>
   </head>
-  <body class="text-on-surface">
-    <main class="min-h-screen flex flex-col md:flex-row">
-      <!-- Left: AI Artwork Background -->
+  <body class="text-on-surface antialiased overflow-hidden">
+    <main class="flex min-h-screen">
+      <!-- Left Section: AI Artwork Background -->
       <section
-        class="hidden md:flex md:w-1/2 lg:w-3/5 relative overflow-hidden bg-primary-container"
+        class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-primary"
       >
         <div class="absolute inset-0 z-0">
           <img
-            alt="AI generated ethereal abstract background"
-            class="w-full h-full object-cover"
-            data-alt="Abstract ethereal blue fluid AI generated background"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvBWDzShciFcOTS9P6BGXkR5J6yROaBV-kU5jkG3fS0QWiOdcScnXFEbArYTnAIPtL1Jm_iPHqCjBvvEJDDqBSlqhpSZnLW09BAYi4BuS71WU_1KeYYhtZ48jwPOa2P2GumLplie3xNNiB3oHl7adbrDcxWbAerWnwF71dg-sHUmlto8dflVrf1UHAVIbMepr_Ju8POkhZK_C-MwOE-4L5nTLXRA9hy4zwZ_fFxO0yhGJsSv1KMtKuXD1BvlOINFtg6om-qQWedNYv"
+            alt="AI generated abstract blue art"
+            class="w-full h-full object-cover mix-blend-overlay opacity-60"
+            data-alt="Ethereal blue abstract AI generated artwork waves"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnZSIpSO0T8MpcujDmoC3wDCRGQOmY6tcp86vI7JIRbU_EUTW_iHLeZrHkQrQXKh6SbKhaEywVC7RAoelcVwzcRPFGYgea-h3INcAiF5ocPM0nXOBiD8UbBRVn3_HJIpPlhZYPTrteecO599uSda8Xx5z9TgqRLNurgE1rbIcBAmbXv-rCdd1RVyawn0ep5bjN3hr0ASI3Y4mAVvKAQ5QcV1hTfaP-ejtex3SmngKpuDhg0Mak7bnjnMrWjmvu3qFupwO065XFmbBG"
           />
-          <div
-            class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent"
-          ></div>
         </div>
         <div
-          class="relative z-10 p-12 lg:p-20 flex flex-col justify-between h-full w-full"
-        >
-          <div class="flex items-center gap-3">
-            <span
-              class="material-symbols-outlined text-on-primary text-4xl"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >owl</span
-            >
-            <span
-              class="headline-font font-extrabold text-2xl tracking-tight text-on-primary"
-              >Gammar</span
-            >
-          </div>
+          class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"
+        ></div>
+        <div class="relative z-20 flex flex-col justify-end p-16 w-full">
           <div class="max-w-md">
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-surface-container-lowest/10 text-white backdrop-blur-md mb-6 font-label text-sm border border-white/10"
+            >
+              Nền tảng Trí tuệ Nhân tạo
+            </span>
             <h2
-              class="headline-font text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
+              class="font-headline text-5xl font-extrabold text-white leading-tight mb-6"
             >
-              Khơi nguồn trí tuệ vô tận cùng AI.
+              Khám phá tiềm năng <br />vô hạn của bạn.
             </h2>
-            <p
-              class="text-on-primary-container text-lg leading-relaxed opacity-90"
-            >
-              Hệ thống quan sát thông minh giúp bạn tối ưu hóa mọi quy trình
-              sáng tạo và quản lý dữ liệu.
+            <p class="text-white/80 font-body text-lg leading-relaxed">
+              Tham gia cùng Gammar để trải nghiệm quy trình làm việc được tối ưu
+              hóa bởi AI, mang lại sự tinh tế và chính xác trong mọi quyết định.
             </p>
           </div>
         </div>
+        <!-- Floating Owl Motif Ornament -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none"
+        >
+          <span
+            class="material-symbols-outlined text-[40rem] text-white select-none"
+            >owl</span
+          >
+        </div>
       </section>
-      <!-- Right: Centered Card Area -->
+      <!-- Right Section: Registration Form -->
       <section
-        class="flex-1 flex items-center justify-center p-6 sm:p-12 lg:p-24 bg-surface"
+        class="w-full lg:w-1/2 flex items-center justify-center p-6 bg-surface"
       >
-        <div class="w-full max-w-md space-y-8">
-          <!-- Logo & Header (Mobile Focus) -->
-          <div class="flex flex-col items-center text-center space-y-6">
+        <div class="w-full max-w-md">
+          <!-- Branding Header -->
+          <div class="flex flex-col items-center mb-10">
             <div
-              class="flex items-center justify-center bg-surface-container-lowest w-20 h-20 rounded-lg ambient-shadow ghost-border"
+              class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center ambient-shadow mb-4"
             >
               <span
-                class="material-symbols-outlined text-primary text-5xl"
+                class="material-symbols-outlined text-primary text-4xl"
+                data-weight="fill"
                 style="font-variation-settings: &quot;FILL&quot; 1"
                 >owl</span
               >
             </div>
-            <div class="space-y-2">
-              <h1 class="headline-font text-3xl font-extrabold text-on-surface">
-                Quên mật khẩu
+            <span
+              class="font-headline text-2xl font-bold tracking-tight text-primary"
+              >Gammar</span
+            >
+          </div>
+          <!-- Registration Card -->
+          <div
+            class="bg-surface-container-lowest rounded-lg p-8 ambient-shadow"
+          >
+            <div class="mb-8">
+              <h1 class="font-headline text-2xl font-bold text-on-surface mb-2">
+                Tạo tài khoản mới
               </h1>
-              <p
-                class="text-on-surface-variant body-md max-w-[280px] mx-auto leading-relaxed"
+              <p class="text-on-surface-variant font-body text-sm">
+                Bắt đầu sáng tạo cùng Ethereal Observer ngay hôm nay.
+              </p>
+            </div>
+            <form class="space-y-5">
+              <!-- Full Name -->
+              <div class="space-y-2">
+                <label
+                  class="block font-body text-sm font-semibold text-on-surface-variant ml-1"
+                  for="fullname"
+                  >Họ và tên</label
+                >
+                <div class="relative group">
+                  <div
+                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-xl group-focus-within:text-primary transition-colors"
+                      >person</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-highest border-none rounded-md focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline font-body"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Nguyễn Văn A"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="space-y-2">
+                <label
+                  class="block font-body text-sm font-semibold text-on-surface-variant ml-1"
+                  for="email"
+                  >Email</label
+                >
+                <div class="relative group">
+                  <div
+                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-xl group-focus-within:text-primary transition-colors"
+                      >mail</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-highest border-none rounded-md focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline font-body"
+                    id="email"
+                    name="email"
+                    placeholder="example@gammar.ai"
+                    type="email"
+                  />
+                </div>
+              </div>
+              <!-- Password -->
+              <div class="space-y-2">
+                <label
+                  class="block font-body text-sm font-semibold text-on-surface-variant ml-1"
+                  for="password"
+                  >Mật khẩu</label
+                >
+                <div class="relative group">
+                  <div
+                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-xl group-focus-within:text-primary transition-colors"
+                      >lock</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-highest border-none rounded-md focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline font-body"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    type="password"
+                  />
+                </div>
+                <p class="text-[0.6875rem] text-on-surface-variant mt-1 ml-1">
+                  Mật khẩu phải có ít nhất 8 ký tự.
+                </p>
+              </div>
+              <!-- Confirm Password -->
+              <div class="space-y-2">
+                <label
+                  class="block font-body text-sm font-semibold text-on-surface-variant ml-1"
+                  for="confirm_password"
+                  >Xác nhận mật khẩu</label
+                >
+                <div class="relative group">
+                  <div
+                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-xl group-focus-within:text-primary transition-colors"
+                      >lock</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-highest border-none rounded-md focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline font-body"
+                    id="confirm_password"
+                    name="confirm_password"
+                    placeholder="••••••••"
+                    type="password"
+                  />
+                </div>
+              </div>
+              <!-- Submit Button -->
+              <button
+                class="w-full primary-gradient text-white font-headline font-bold py-4 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mt-4"
+                type="submit"
               >
-                Nhập email của bạn để nhận liên kết đặt lại mật khẩu
+                Đăng ký
+                <span
+                  class="material-symbols-outlined text-xl"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >owl</span
+                >
+              </button>
+            </form>
+            <div
+              class="mt-8 pt-6 border-t border-outline-variant/20 text-center"
+            >
+              <p class="text-sm font-body text-on-surface-variant">
+                Đã có tài khoản?
+                <a
+                  class="text-primary font-semibold hover:underline decoration-2 underline-offset-4"
+                  href="#"
+                  >Đăng nhập ngay</a
+                >
               </p>
             </div>
           </div>
-          <!-- Forgot Password Form -->
-          <form class="space-y-6 mt-8">
-            <div class="space-y-2">
-              <label
-                class="block text-sm font-semibold text-on-surface-variant ml-1"
-                for="email"
-              >
-                Email
-              </label>
-              <div class="relative group">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
-                >
-                  <span class="material-symbols-outlined text-secondary text-xl"
-                    >mail</span
-                  >
-                </div>
-                <input
-                  class="block w-full pl-11 pr-4 py-4 bg-surface-container-highest border-none rounded-md text-on-surface placeholder-outline focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all duration-300 outline-none"
-                  id="email"
-                  name="email"
-                  placeholder="TenCuaBan@example.com"
-                  required=""
-                  type="email"
-                />
-              </div>
-              <p class="text-[0.6875rem] text-on-surface-variant mt-2 px-1">
-                Chúng tôi sẽ gửi hướng dẫn bảo mật đến địa chỉ này.
-              </p>
-            </div>
-            <button
-              class="w-full py-4 primary-gradient text-on-primary headline-font font-bold rounded-full transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] ambient-shadow flex items-center justify-center gap-2 group"
-              type="submit"
-            >
-              <span>Gửi liên kết đặt lại mật khẩu</span>
-              <span
-                class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1"
-                >send</span
-              >
-            </button>
-          </form>
-          <!-- Footer Links -->
-          <div class="pt-8 flex flex-col items-center gap-4">
-            <a
-              class="text-primary font-semibold text-sm hover:underline flex items-center gap-2"
-              href="#"
-            >
-              <span class="material-symbols-outlined text-lg">arrow_back</span>
-              Quay lại đăng nhập
-            </a>
-            <div class="flex items-center gap-6 pt-12">
+          <!-- Footer Links from JSON -->
+          <div class="mt-12 text-center">
+            <div class="flex items-center justify-center gap-6 mb-4">
               <a
-                class="text-on-surface-variant text-[0.6875rem] hover:text-primary transition-colors"
+                class="text-[0.6875rem] font-label text-on-surface-variant hover:text-primary transition-colors"
                 href="#"
                 >Điều khoản</a
               >
               <a
-                class="text-on-surface-variant text-[0.6875rem] hover:text-primary transition-colors"
+                class="text-[0.6875rem] font-label text-on-surface-variant hover:text-primary transition-colors"
                 href="#"
                 >Bảo mật</a
               >
               <a
-                class="text-on-surface-variant text-[0.6875rem] hover:text-primary transition-colors"
+                class="text-[0.6875rem] font-label text-on-surface-variant hover:text-primary transition-colors"
                 href="#"
                 >Trợ giúp</a
               >
             </div>
+            <p
+              class="text-[0.6875rem] font-label text-on-surface-variant opacity-60"
+            >
+              © 2024 Gammar. Bảo lưu mọi quyền.
+            </p>
           </div>
         </div>
       </section>
     </main>
-    <!-- Shared Footer (Hidden on focused task flow as per protocol, but defined if needed for Shell) -->
-    <footer class="hidden">
-      <div
-        class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4"
-      >
-        <p class="text-[0.6875rem] text-on-surface-variant">
-          © 2024 Gammar. Bảo lưu mọi quyền.
-        </p>
-      </div>
-    </footer>
   </body>
 </html>
