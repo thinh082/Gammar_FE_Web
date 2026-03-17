@@ -1,4 +1,4 @@
-const GOOGLE_LOGIN_ENDPOINT = "http://localhost:5062/api/auth/google-login";
+const GOOGLE_LOGIN_ENDPOINT = "/api/auth/google-login";
 const callbackStatusEl = document.getElementById("callbackStatus");
 
 function setStatus(text) {
@@ -58,12 +58,8 @@ async function handleGoogleCallback() {
   }
 
   try {
-    const response = await fetch(GOOGLE_LOGIN_ENDPOINT, {
+    const response = await apiFetch(GOOGLE_LOGIN_ENDPOINT, {
       method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({ idToken }),
     });
 

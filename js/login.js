@@ -1,4 +1,4 @@
-const LOGIN_ENDPOINT = "http://localhost:5062/api/Auth/login";
+const LOGIN_ENDPOINT = "/api/Auth/login";
 const GOOGLE_CLIENT_ID =
   "596598398379-in2t43evk7clm9pffdjrvm8jg5mit72d.apps.googleusercontent.com";
 const GOOGLE_AUTH_ENDPOINT = "https://accounts.google.com/o/oauth2/v2/auth";
@@ -37,12 +37,8 @@ loginForm.addEventListener("submit", async (event) => {
   setLoading(true);
 
   try {
-    const response = await fetch(LOGIN_ENDPOINT, {
+    const response = await apiFetch(LOGIN_ENDPOINT, {
       method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({
         email,
         password,

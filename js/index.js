@@ -1,5 +1,5 @@
 const authActions = document.getElementById("authActions");
-const LOGOUT_ENDPOINT = "http://localhost:5062/api/auth/logout";
+const LOGOUT_ENDPOINT = "/api/auth/logout";
 
 function getCurrentUser() {
   try {
@@ -12,12 +12,8 @@ function getCurrentUser() {
 
 async function logout() {
   try {
-    await fetch(LOGOUT_ENDPOINT, {
+    await apiFetch(LOGOUT_ENDPOINT, {
       method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
   } catch (error) {
     console.error("Logout request failed", error);

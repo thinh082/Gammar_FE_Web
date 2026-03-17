@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5062";
+const API_BASE_URL = "https://localhost:7105";
 
 // Global AJAX defaults (requires jQuery)
 $.ajaxSetup({

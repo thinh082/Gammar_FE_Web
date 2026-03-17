@@ -1,4 +1,4 @@
-const USER_ME_ENDPOINT = "http://localhost:5062/api/User/me";
+const USER_ME_ENDPOINT = "/api/User/me";
 
 const sidebarFullnameEl = document.getElementById("sidebarFullname");
 const sidebarEmailEl = document.getElementById("sidebarEmail");
@@ -57,12 +57,8 @@ function extractValidationMessage(data) {
 
 async function fetchMe() {
   try {
-    const response = await fetch(USER_ME_ENDPOINT, {
+    const response = await apiFetch(USER_ME_ENDPOINT, {
       method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
 
     let result = null;
@@ -106,12 +102,8 @@ async function updateProfile() {
   }
 
   try {
-    const response = await fetch(USER_ME_ENDPOINT, {
+    const response = await apiFetch(USER_ME_ENDPOINT, {
       method: "PUT",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({ fullname, email }),
     });
 
