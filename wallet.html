@@ -172,7 +172,7 @@
               class="md:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
             >
               <h4 class="text-lg font-bold mb-4">Nạp tiền vào ví</h4>
-              <form class="space-y-4">
+              <form id="walletTopupForm" class="space-y-4">
                 <div>
                   <label
                     for="topup-amount"
@@ -191,12 +191,23 @@
                   />
                 </div>
                 <button
+                  id="createPaymentLinkBtn"
                   type="button"
                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-md"
                 >
                   <span class="material-symbols-outlined">qr_code_2</span>
                   <span>Tạo QR Thanh Toán</span>
                 </button>
+                <p
+                  id="walletTopupMessage"
+                  class="hidden text-sm font-medium"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+                <div
+                  id="embedded-payment-container"
+                  class="hidden h-[520px] w-full rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden"
+                ></div>
               </form>
             </div>
           </div>
@@ -396,5 +407,8 @@
         </div>
       </main>
     </div>
+    <script src="./js/api.js"></script>
+    <script src="https://cdn.payos.vn/payos-checkout/v1/stable/payos-initialize.js"></script>
+    <script src="./js/wallet.js"></script>
   </body>
 </html>

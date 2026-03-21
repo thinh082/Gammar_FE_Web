@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://localhost:7105";
+const API_BASE_URL = "https://audrina-subultimate-ghostily.ngrok-free.dev";
 
 // Global AJAX defaults (requires jQuery)
 $.ajaxSetup({
