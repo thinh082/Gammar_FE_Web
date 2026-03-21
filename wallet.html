@@ -172,23 +172,32 @@
               class="md:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
             >
               <h4 class="text-lg font-bold mb-4">Nạp tiền vào ví</h4>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form class="space-y-4">
+                <div>
+                  <label
+                    for="topup-amount"
+                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                  >
+                    Nhập số tiền muốn nạp
+                  </label>
+                  <input
+                    id="topup-amount"
+                    name="topup-amount"
+                    type="number"
+                    min="1000"
+                    step="1000"
+                    placeholder="Ví dụ: 100000"
+                    class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                  />
+                </div>
                 <button
-                  class="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-lg transition-all shadow-md"
+                  type="button"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-md"
                 >
-                  <span class="material-symbols-outlined">credit_card</span>
-                  <span>Thẻ ngân hàng (Napas)</span>
+                  <span class="material-symbols-outlined">qr_code_2</span>
+                  <span>Tạo QR Thanh Toán</span>
                 </button>
-                <button
-                  class="flex items-center justify-center gap-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold py-4 px-6 rounded-lg transition-all"
-                >
-                  <span class="material-symbols-outlined">account_balance</span>
-                  <span>Ví điện tử MoMo / ZaloPay</span>
-                </button>
-              </div>
-              <p class="text-xs text-slate-400 mt-4 text-center">
-                Giao dịch được bảo mật và xử lý tức thì.
-              </p>
+              </form>
             </div>
           </div>
           <!-- Transaction History -->
